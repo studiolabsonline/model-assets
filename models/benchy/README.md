@@ -23,9 +23,16 @@ upstream file, because there was nothing to read.
 | `dist/benchy-vibrant-nothumb.3mf` | vibrant | no |
 | `dist/benchy-brand.3mf` | brand | yes |
 | `dist/benchy-brand-nothumb.3mf` | brand | no |
+| `dist/benchy-vibrant-web.3mf` | vibrant, reduced | no |
 
 The thumbnail pair is the same geometry and the same colors, differing only in whether the
 package embeds a preview image. A 3MF thumbnail is optional in the format.
+
+`benchy-vibrant-web.3mf` is the reduced variant the 3MF QuickView website's home page
+loads: the same 16 parts and colors, simplified from 313,850 to 29,437 triangles (3.21 MB
+to 0.35 MB) so it loads quickly on phones. It is built by `gen-benchy-web.py` in the
+3mf-quickview repo, which simplifies each part with MeshLab's quadric edge collapse. Use
+`benchy-vibrant.3mf` anywhere full detail matters.
 
 ## A note on the colors
 
